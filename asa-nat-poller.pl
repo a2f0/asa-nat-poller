@@ -4,7 +4,6 @@
 # Written by Dan Sullivan
 # This prints xlate table utilization (%) for the ASA 8.x platform
 # It was written as a custom data input for Cacti
-# Based on 650000 concurrent sessions (ASA 5550)
 
 init();
 use strict;
@@ -73,7 +72,7 @@ sub printMyNATValue() {
         my @items = split("\n", $output);
         my $lineOfInterest = $items[1];
         $lineOfInterest=~s/^(\d+) //;
-        my $percent = ($1/650000)*100;
+        my $percent = ($1/($environment->{'sessions'}))*100;
         $percent = ceil($percent);
         print "percent:$percent\n";
 }
