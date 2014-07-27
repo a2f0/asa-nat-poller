@@ -8,6 +8,5 @@ Made for Cacti.
 Usage
 ---------------------
 
-1) Modify the environment in the init() subroutine
-
+1) Modify the environment in the init() subroutine  
 2) Execute the script
